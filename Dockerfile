@@ -5,15 +5,17 @@ MAINTAINER Maxwell Bates <maxwell.bates@autodesk.com>
 RUN apt-get update
 RUN apt-get install curl -y
 RUN apt-get install git -y
+RUN apt-get install make -y
+RUN apt-get install g++ -y
 
 #Node.js https://nodesource.com/blog/nodejs-v012-iojs-and-the-nodesource-linux-repositories
-RUN curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
 RUN apt-get install -y nodejs
 
 RUN npm install -g grunt-cli
 RUN npm install -g bower
 RUN npm install -g forever
-RUN npm install -g nodemon@dev
+RUN npm install -g nodemon
 
 ENV APP /app
 
